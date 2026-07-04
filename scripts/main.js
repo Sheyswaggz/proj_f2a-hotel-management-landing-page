@@ -1,3 +1,20 @@
-/** Main JS - Core Init & Smooth Scrolling - See TASK-003 for full implementation */
+/** Main JS - Core Init & Smooth Scrolling */
 
-console.log('Hotel Landing Page - Initializing...');
+import { initAnimations } from './animations.js';
+import { initInteractions } from './interactions.js';
+
+/**
+ * Initialize all landing page functionality on DOM ready
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  // Initialize scroll-triggered reveal animations
+  initAnimations();
+
+  // Initialize interactive components and behaviors
+  initInteractions();
+
+  // Development logging
+  if (import.meta.env.DEV) {
+    console.log('Hotel Landing Page initialized');
+  }
+});
