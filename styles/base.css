@@ -1,3 +1,159 @@
-/* Base CSS - Design Tokens & Reset - See TASK-002 for full implementation */
+/* Base CSS - Design Tokens & Reset */
 
-:root {}
+/* ============================================================================
+   CSS RESET
+   ============================================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: var(--color-warm-white);
+  line-height: 1.6;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ============================================================================
+   DESIGN TOKENS - CSS CUSTOM PROPERTIES
+   ============================================================================ */
+
+:root {
+  /* Color Palette - Luxury Hotel Theme */
+  --color-charcoal: #1a1a1a;
+  --color-warm-white: #faf9f7;
+  --color-gold: #c9a96e;
+  --color-gold-dark: #a8834a;
+  --color-cream: #f5f0e8;
+  --color-cream-dark: #ede5d8;
+
+  /* Semantic Color Tokens */
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #5a5a5a;
+  --color-text-muted: #8a8a8a;
+  --color-text-inverse: #faf9f7;
+
+  --color-bg-primary: #faf9f7;
+  --color-bg-dark: #1a1a1a;
+  --color-bg-card: #ffffff;
+
+  --color-accent: #c9a96e;
+  --color-accent-hover: #a8834a;
+
+  /* Typography - Font Families */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Fluid Typography Scale */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --text-3xl: clamp(2rem, 1.6rem + 2vw, 3rem);
+  --text-4xl: clamp(2.5rem, 2rem + 2.5vw, 4rem);
+  --text-hero: clamp(3rem, 2.5rem + 3vw, 6rem);
+
+  /* Spacing Scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 5rem;
+  --space-3xl: 8rem;
+
+  /* Border Radius Tokens */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadow Tokens */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-xl: 0 20px 25px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.04);
+  --shadow-gold: 0 4px 20px rgba(201,169,110,0.3);
+
+  /* Transition Tokens */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 600ms ease;
+
+  /* Layout Tokens */
+  --nav-height: 80px;
+  --container-max: 1280px;
+  --container-padding: clamp(1rem, 5vw, 3rem);
+}
+
+/* ============================================================================
+   BASE TYPOGRAPHY
+   ============================================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+p {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.section-padding {
+  padding: var(--space-2xl) 0;
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-serif {
+  font-family: var(--font-serif);
+}
