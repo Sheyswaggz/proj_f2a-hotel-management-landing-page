@@ -1,1 +1,173 @@
-/* Animations CSS - Keyframe & Transition Definitions - See TASK-003 for full implementation */
+/* Animations CSS - Keyframe & Transition Definitions */
+
+/* ============================================
+   1. Scroll Reveal Base States
+   ============================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================
+   2. Stagger Delays
+   ============================================ */
+
+.reveal-stagger-1 {
+  transition-delay: 0ms;
+}
+
+.reveal-stagger-2 {
+  transition-delay: 100ms;
+}
+
+.reveal-stagger-3 {
+  transition-delay: 200ms;
+}
+
+.reveal-stagger-4 {
+  transition-delay: 300ms;
+}
+
+.reveal-stagger-5 {
+  transition-delay: 400ms;
+}
+
+.reveal-stagger-6 {
+  transition-delay: 500ms;
+}
+
+.reveal-stagger-7 {
+  transition-delay: 600ms;
+}
+
+.reveal-stagger-8 {
+  transition-delay: 700ms;
+}
+
+/* ============================================
+   3. Hero Kinetic Typography Keyframes
+   ============================================ */
+
+@keyframes heroFadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroCharReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) rotateX(20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+/* ============================================
+   4. Scroll Indicator
+   ============================================ */
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* ============================================
+   5. Navbar Transition
+   ============================================ */
+
+@keyframes navFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   6. Spinner
+   ============================================ */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   7. Shimmer
+   ============================================ */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ============================================
+   8. Reduced Motion Accessibility
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
